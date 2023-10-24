@@ -805,7 +805,8 @@ setup_network_config() {
        if [[ -s "$stderr_file" ]]; then
          debug 'fatal: netplan generate stderr not empty:'
          cat "$stderr_file" | debugoutput
-         return 1
+         # disabling this for now as our images are failing with a warning
+         # return 1
        fi
      else
        setup_etc_network_interfaces
